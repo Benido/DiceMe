@@ -1,0 +1,1 @@
+Simple browser game made for an evaluation on Javascript skills
