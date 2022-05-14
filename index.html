@@ -5,8 +5,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DiceMe</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  <div id="container">
+    <div id="boxPlayer1" class="boxPlayer active">
+      <h1>PLAYER 1</h1>
+      <div class="globalBox">
+        <div id="globalPlayer1"></div>
+      </div>
+      <div class="roundBox">
+        <h3>CURRENT</h3>
+        <div id="roundPlayer1">0</div>
+      </div>
+    </div>
+    <div id="boxPlayer2" class="boxPlayer">
+      <h1>PLAYER 2</h1>
+      <div class="globalBox">
+        <div id="globalPlayer2"></div>
+      </div>
+      <div class="roundBox">
+        <h3>CURRENT</h3>
+        <div id="roundPlayer2">0</div>
+      </div>
+    </div>
+    <div id="gameMenu">
+      <div><button type="button" id="newGameButton">New game</button></div>
+      <div id="dice"></div>
+      <div><button type="button" id="rollDiceButton">ROLL DICE</button></div>
+      <div><button type="button" id="holdButton">HOLD</button></div>
+    </div>
+  </div>
+    
+
   
+<script src="script.js"></script> 
 </body>
 </html>
