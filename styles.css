@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+
+body {
+  font-family: Lato, sans-serif;
+}
+
+h1 {
+  font-weight: 100;
+}
+
 h3 {
   color: black;
 }
 
 .active {
-  background-color:lightgray
+  background-color:lightgray;
+}
+
+.active h1 {
+  font-weight: 300;
 }
 
 .boxPlayer {
@@ -38,11 +52,12 @@ h3 {
 
 #gameMenu {
   position: absolute;
-  top: 0;
   left: 50%;
-  z-index: 1;
+  transform: translateX(-50%);
   width: 20%;
   height: 100%;
+  object-fit: cover;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

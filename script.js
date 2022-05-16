@@ -43,8 +43,11 @@ function newGame () {
   player2.score = 0
   refreshDisplay(player1, "roundDisplay", 0)
   refreshDisplay(player2, "roundDisplay", 0)
-  refreshDisplay(player1, "globalDisplay", 0)
-  refreshDisplay(player2, "globalDisplay", 0)
+  refreshDisplay(player1, "globalDisplay", "")
+  refreshDisplay(player2, "globalDisplay", "")
+  activePlayer.box.classList.remove("active")
+  activePlayer = player1
+  activePlayer.box.classList.add("active")
 }
 
 function getDiceResult () {
@@ -55,12 +58,11 @@ function throwDice (player) {
   result = getDiceResult()
   diceResult.innerText = result
   if (result === 1) {
-    youLose() 
+    youLose()
+    return 
   } 
   round += result
-  //player["roundDisplay"].innerText = round
   refreshDisplay(player, "roundDisplay", round )
-  console.log(result + " " + round)
 }
 
 function hold (player) {
@@ -69,8 +71,7 @@ function hold (player) {
   refreshDisplay(player, "globalDisplay", player.score)
   refreshDisplay(player, "roundDisplay", 0)
 
-  //player.globalDisplay.innerText = player.score
-  if (player.score >= 20) {
+  if (player.score >= 100) {
     youWin()
     return
   }
