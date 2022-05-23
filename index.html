@@ -5,41 +5,65 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DiceMe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div id="container">
-    <div id="boxPlayer1" class="boxPlayer active">
-      <div class = globalBoxContainer>
-        <h1>PLAYER 1</h1>
-        <div class="globalBox">
-          <div id="globalPlayer1"></div>
+  <div class="h-screen w-screen text-slate-700 font-thin">
+    <div class="grid grid-rows-6 grid-cols-12 gap-1 h-full place-items-center">
+      <div class="row-start-1 row-span-1 col-start-6 col-span-2 self-end flex items-center space-x-3 ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="#ef4444" class="" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+        <button type="button" id="new-game-button" class="text-2xl">NEW GAME</button>
+      </div>
+      <div class="container-global-box row-start-2 row-span-2 col-start-3 col-span-3 h-full flex flex-col justify-evenly items-center">
+        <h1 class="text-5xl">PLAYER 1</h1>
+        <div id="global-player1" class="global-box text-7xl text-red-500">0</div>
+      </div> 
+      <div class="round-box row-start-5 row-span-1 col-start-3 col-span-3 h-full flex flex-col justify-evenly items-center w-1/2 font-light bg-red-500">
+        <h3 class="">CURRENT</h3>
+        <div id="round-player1" class="text-3xl text-white">0</div>
+      </div>
+      <div id="dice" class="row-start-2 row-span-2 col-start-6 col-span-2 aspect-square max-w-max p-2 bg-white shadow-xl">
+       <!-- <p id="dice" class=""></p>-->
+        <img src="images/dice-dots/dice-1.png" class="hidden" alt="dice face with 1 dot">
+        <img src="images/dice-dots/dice-2.png" class="hidden" alt="dice face with 2 dot">
+        <img src="images/dice-dots/dice-3.png" class="hidden" alt="dice face with 3 dot">
+        <img src="images/dice-dots/dice-4.png" class="hidden" alt="dice face with 4 dot">
+        <img src="images/dice-dots/dice-5.png" class="hidden" alt="dice face with 5 dot">
+        <img src="images/dice-dots/dice-6.png" class="hidden" alt="dice face with 6 dot">
+      </div>
+      <div id="game-menu" class="row-start-5 row-span-1 col-start-6 col-span-2 h-full flex flex-col justify-between items-center text-2xl">
+        <div class="flex space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.1em" fill="#ef4444" class="self-baseline" viewBox="0 0 16 16">
+            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+          </svg>
+          <button type="button" id="roll-dice-button">ROLL DICE</button>
         </div>
+        <div class="flex space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#ef4444" class="" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+            <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+          </svg>
+          <button type="button" id="hold-button">HOLD</button></div>
       </div>
-      <div class="roundBox">
-        <h3>CURRENT</h3>
-        <div id="roundPlayer1">0</div>
+      <div class= "container-global-box row-start-2 row-span-2 col-start-8 col-span-3 h-full flex flex-col justify-evenly items-center">
+        <h1 class="text-5xl">PLAYER 2</h1>
+        <div id="global-player2"class="global-box text-7xl text-red-500">0</div>
       </div>
+      <div class="round-box row-start-5 row-span-1 col-start-8 col-span-3 h-full flex flex-col justify-evenly items-center w-1/2 font-light bg-red-500">
+        <h3 class="">CURRENT</h3>
+        <div id="round-player2" class="text-3xl text-white">0</div>
+      </div>
+      <div id="box-player1" class="row-span-full col-start-1 col-span-6 h-full -z-50 justify-self-stretch active"></div>
+      <div id="box-player2" class="row-span-full col-end-13 col-span-6 h-full -z-50 justify-self-stretch"></div>
     </div>
-    <div id="boxPlayer2" class="boxPlayer">
-      <div class = globalBoxContainer>
-        <h1>PLAYER 2</h1>
-        <div class="globalBox">
-          <div id="globalPlayer2"></div>
-        </div>
-      </div>
-      <div class="roundBox">
-        <h3>CURRENT</h3>
-        <div id="roundPlayer2">0</div>
-      </div>
-    </div>
-    <div id="gameMenu">
-      <div><button type="button" id="newGameButton">New game</button></div>
-      <div id="dice"></div>
-      <div><button type="button" id="rollDiceButton">ROLL DICE</button></div>
-      <div><button type="button" id="holdButton">HOLD</button></div>
-    </div>
+
   </div>
+
     
 
   
