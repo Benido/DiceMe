@@ -13,15 +13,9 @@ h3 {
 }
 
 .active {
-  background-color:rgba(245, 245, 245, 0.801);
+  background-color:rgba(245, 245, 245, 0.901);
 }
 
 .active h1 {
   font-weight: 300;
-}
-
-#dice {
-  
-  
-  
 }

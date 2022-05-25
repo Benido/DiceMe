@@ -11,23 +11,25 @@
 <body>
   <div class="h-screen w-screen text-slate-700 font-thin">
     <div class="grid grid-rows-6 grid-cols-12 gap-1 h-full place-items-center">
-      <div class="row-start-1 row-span-1 col-start-6 col-span-2 self-end flex items-center space-x-3 ">
+      <div class="row-start-1 row-span-1 col-start-6 col-span-2 self-center flex items-center space-x-3 ">
         <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="#ef4444" class="" viewBox="0 0 16 16">
           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
           <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
         </svg>
         <button type="button" id="new-game-button" class="text-2xl">NEW GAME</button>
       </div>
-      <div class="container-global-box row-start-2 row-span-2 col-start-3 col-span-3 h-full flex flex-col justify-evenly items-center">
-        <h1 class="text-5xl">PLAYER 1</h1>
-        <div id="global-player1" class="global-box text-7xl text-red-500">0</div>
+      <div class="row-start-2 row-span-2 col-start-3 col-span-3 h-full flex flex-col justify-evenly items-center">
+        <div class="inline-flex space-x-7">
+          <h1 id="name-player1" class="text-5xl font-light">PLAYER 1</h1>
+          <span id="dot-player1" class="self-center w-4 h-4 aspect-square rounded-full bg-red-500"></span>
+        </div>
+        <div id="global-player1" class="global-box text-8xl text-red-500">0</div>
       </div> 
       <div class="round-box row-start-5 row-span-1 col-start-3 col-span-3 h-full flex flex-col justify-evenly items-center w-1/2 font-light bg-red-500">
         <h3 class="">CURRENT</h3>
-        <div id="round-player1" class="text-3xl text-white">0</div>
+        <div id="round-player1" class="text-4xl text-white">0</div>
       </div>
-      <div id="dice" class="row-start-2 row-span-2 col-start-6 col-span-2 aspect-square max-w-max p-2 bg-white shadow-xl">
-       <!-- <p id="dice" class=""></p>-->
+      <div id="dice" class="row-start-2 row-span-2 col-start-6 col-span-2 aspect-square max-w-max m-6 bg-white shadow-xl">
         <img src="images/dice-dots/dice-1.png" class="hidden" alt="dice face with 1 dot">
         <img src="images/dice-dots/dice-2.png" class="hidden" alt="dice face with 2 dot">
         <img src="images/dice-dots/dice-3.png" class="hidden" alt="dice face with 3 dot">
@@ -50,13 +52,16 @@
           </svg>
           <button type="button" id="hold-button">HOLD</button></div>
       </div>
-      <div class= "container-global-box row-start-2 row-span-2 col-start-8 col-span-3 h-full flex flex-col justify-evenly items-center">
-        <h1 class="text-5xl">PLAYER 2</h1>
-        <div id="global-player2"class="global-box text-7xl text-red-500">0</div>
+      <div class= "row-start-2 row-span-2 col-start-8 col-span-3 h-full flex flex-col justify-evenly items-center">
+        <div class="inline-flex space-x-7">
+        <h1 id="name-player2" class="text-5xl">PLAYER 2</h1>
+        <span id="dot-player2" class="self-center w-4 h-4 aspect-square rounded-full bg-red-500 hidden"></span>
+        </div>  
+        <div id="global-player2"class="global-box text-8xl text-red-500">0</div>
       </div>
       <div class="round-box row-start-5 row-span-1 col-start-8 col-span-3 h-full flex flex-col justify-evenly items-center w-1/2 font-light bg-red-500">
         <h3 class="">CURRENT</h3>
-        <div id="round-player2" class="text-3xl text-white">0</div>
+        <div id="round-player2" class="text-4xl text-white">0</div>
       </div>
       <div id="box-player1" class="row-span-full col-start-1 col-span-6 h-full -z-50 justify-self-stretch active"></div>
       <div id="box-player2" class="row-span-full col-end-13 col-span-6 h-full -z-50 justify-self-stretch"></div>
