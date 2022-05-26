@@ -18,7 +18,7 @@ const diceFaces = document.getElementById("dice").children
 
 // GLOBAL VARIABLES
 
-const maxScore = 100
+const maxScore = 10
 let round = 0
 let player1 = {string: "Player 1", score : 0, box: boxPlayer1, dot: dotPlayer1, nameDisplay: namePlayer1, roundDisplay: roundPlayer1, globalDisplay: globalPlayer1}
 let player2 = {string: "Player 2", score : 0, box: boxPlayer2, dot: dotPlayer2, nameDisplay: namePlayer2, roundDisplay: roundPlayer2, globalDisplay: globalPlayer2}
@@ -40,13 +40,13 @@ function switchPlayer () {
 
 //displays message, say which player won, offer a new game
 function youLose () {
-  alert("Perdu !")
+  alert("Dommage, " + activePlayer.string + ", vous avez perdu")
   newGame()
 }
 
 //displays message, say which player won, offer a new game
 function youWin () {
-  alert(activePlayer.string + " a gagné la partie")
+  alert("Félicitations, " + activePlayer.string + " vous gagnez la partie")
   newGame()
 
 }

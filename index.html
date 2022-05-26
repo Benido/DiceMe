@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DiceMe</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="DiceMe est un de paris avec un dé">
   <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -13,22 +13,22 @@
     <div class="grid grid-rows-6 grid-cols-12 gap-1 h-full place-items-center">
       <div class="row-start-1 row-span-1 col-start-5 col-span-4 self-center flex flex-col sm:flex-row items-center 
       sm:space-x-3 space-y-2 sm:space-y-0 ">
-        <img src="images/plus-circle.png" class="h-6 w-min-content" alt="plus-icon">
+        <img src="images/icons/plus-circle.png" class="h-6 w-min-content" alt="plus-icon">
         <button type="button" id="new-game-button" class="text-xl lg:text-2xl">NEW GAME</button>
       </div>
-      <div class="row-start-2 row-span-2 col-start-2 col-span-4 h-full flex flex-col justify-evenly items-center">
-        <div class="inline-flex space-x-1 md:space-x-7">
-          <h1 id="name-player1" class="text-2xl sm:text-3xl md:text-5xl font-light">PLAYER 1</h1>
-          <span id="dot-player1" class="self-center w-2 md:w-4 h-2 md:h-4 aspect-square rounded-full bg-red-500"></span>
-        </div>
-        <div id="global-player1" class="global-box text-7xl md:text-9xl text-red-500">0</div>
+      <div class="row-start-2 row-span-1 col-start-2 col-span-4 h-full items-center inline-flex space-x-1 md:space-x-7">
+        <h1 id="name-player1" class="text-2xl sm:text-3xl md:text-5xl font-light">PLAYER 1</h1>
+        <span id="dot-player1" class="self-center w-2 md:w-4 h-2 md:h-4 aspect-square rounded-full bg-red-500"></span>
+      </div>
+      <div class="row-start-3 row-span-1 col-start-2 col-span-4 self-start">
+        <p id="global-player1" class=" text-7xl md:text-9xl text-red-500">0</p>
       </div> 
-      <div class="round-box row-start-5 row-span-1 col-start-1 sm:col-start-2 col-span-4 h-full flex flex-col justify-evenly 
+      <div class="row-start-5 row-span-1 col-start-1 sm:col-start-2 col-span-4 h-full flex flex-col justify-evenly 
       items-center w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-2/5 font-light bg-red-500">
         <h3 class="xl:text-xl">CURRENT</h3>
-        <div id="round-player1" class="text-5xl text-white">0</div>
+        <div id="round-player1" class="text-3xl sm:text-5xl text-white">0</div>
       </div>
-      <div id="dice" class="row-start-3 row-span-2 col-start-6 col-span-2 sm:self-start 2xl:w-1/2 lg:m-6 bg-white shadow-xl">
+      <div id="dice" class="row-start-3 row-end-5 sm:row-end-4 col-start-6 col-span-2 sm:self-start 2xl:w-1/2 lg:m-6 bg-white shadow-xl">
         <img src="images/dice-faces/dice-1.png" class="hidden" alt="dice face with 1 dot">
         <img src="images/dice-faces/dice-2.png" class="hidden" alt="dice face with 2 dot">
         <img src="images/dice-faces/dice-3.png" class="hidden" alt="dice face with 3 dot">
@@ -36,36 +36,33 @@
         <img src="images/dice-faces/dice-5.png" class="hidden" alt="dice face with 5 dot">
         <img src="images/dice-faces/dice-6.png" class="hidden" alt="dice face with 6 dot">
       </div>
-      <div id="game-menu" class="row-start-5 row-span-1 col-start-5 col-span-4 h-full flex flex-col justify-between items-center text-xl lg:text-2xl">
+      <div id="game-menu" class="row-start-5 row-span-1 col-start-5 col-span-4 h-full 
+      flex flex-col justify-between items-center text-xl lg:text-2xl">
         <div class="flex flex-col sm:flex-row items-center space-x-1 sm:space-x-3 space-y-2 sm:space-y-0">
-          <img src="images/arrow-repeat.png" class="h-5 w-min-content" alt="repeat-icon">
+          <img src="images/icons/arrow-repeat.png" class="h-5 w-min-content" alt="repeat-icon">
           <button type="button" id="roll-dice-button">ROLL DICE</button>
         </div>
         <div class="flex flex-col sm:flex-row items-center sm:space-x-3 space-y-2 sm:space-y-0">
-          <img src="images/box-arrow-in-down.png" class="w-5 h-min-content" alt="save-icon">
+          <img src="images/icons/box-arrow-in-down.png" class="w-5 h-min-content" alt="save-icon">
           <button type="button" id="hold-button">HOLD</button></div>
       </div>
-      <div class= "row-start-2 row-span-2 col-start-8 col-span-4 h-full flex flex-col justify-evenly items-center">
-        <div class="inline-flex space-x-1 md:space-x-7">
+      <div class="row-start-2 row-span-1 col-start-8 col-span-4 h-full items-center inline-flex space-x-1 md:space-x-7">
         <h1 id="name-player2" class="text-2xl sm:text-3xl md:text-5xl">PLAYER 2</h1>
         <span id="dot-player2" class="self-center w-2 md:w-4 h-2 md:h-4 aspect-square rounded-full bg-red-500 hidden"></span>
-        </div>  
-        <div id="global-player2"class="global-box text-7xl md:text-9xl text-red-500">0</div>
       </div>
-      <div class="round-box row-start-5 row-span-1 col-start-9 sm:col-start-8 col-span-4 h-full flex flex-col justify-evenly
+      <div class="row-start-3 row-span-1 col-start-8 col-span-4 self-start">
+        <p id="global-player2" class="text-7xl md:text-9xl text-red-500">72</p>
+      </div>
+      <div class="row-start-5 row-span-1 col-start-9 sm:col-start-8 col-span-4 h-full flex flex-col justify-evenly
        items-center w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-2/5 font-light bg-red-500">
         <h3 class="xl:text-xl">CURRENT</h3>
-        <div id="round-player2" class="text-5xl text-white">0</div>
+        <div id="round-player2" class="text-3xl sm:text-5xl text-white">0</div>
       </div>
       <div id="box-player1" class="row-span-full col-start-1 col-span-6 h-full -z-50 justify-self-stretch active"></div>
       <div id="box-player2" class="row-span-full col-end-13 col-span-6 h-full -z-50 justify-self-stretch"></div>
     </div>
-
   </div>
-
-    
-
-  
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="script.js"></script> 
 </body>
 </html>
