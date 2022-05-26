@@ -18,7 +18,7 @@ const diceFaces = document.getElementById("dice").children
 
 // GLOBAL VARIABLES
 
-const maxScore = 10
+const maxScore = 100
 let round = 0
 let player1 = {string: "Player 1", score : 0, box: boxPlayer1, dot: dotPlayer1, nameDisplay: namePlayer1, roundDisplay: roundPlayer1, globalDisplay: globalPlayer1}
 let player2 = {string: "Player 2", score : 0, box: boxPlayer2, dot: dotPlayer2, nameDisplay: namePlayer2, roundDisplay: roundPlayer2, globalDisplay: globalPlayer2}
@@ -29,7 +29,7 @@ let activePlayer = player1
 
 //removes the active player features, switch players then set the active player features
 function switchPlayer () {
-activePlayer.box.classList.remove("active")
+    activePlayer.box.classList.remove("active")
     activePlayer.nameDisplay.classList.remove("font-light")
     activePlayer.dot.classList.add("hidden")
     activePlayer === player1 ? activePlayer = player2 : activePlayer = player1 

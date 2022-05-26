@@ -11,57 +11,51 @@
 <body>
   <div class="h-screen w-screen text-slate-700 font-thin">
     <div class="grid grid-rows-6 grid-cols-12 gap-1 h-full place-items-center">
-      <div class="row-start-1 row-span-1 col-start-6 col-span-2 self-center flex items-center space-x-3 ">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="#ef4444" class="" viewBox="0 0 16 16">
-          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-        </svg>
-        <button type="button" id="new-game-button" class="text-2xl">NEW GAME</button>
+      <div class="row-start-1 row-span-1 col-start-5 col-span-4 self-center flex flex-col sm:flex-row items-center 
+      sm:space-x-3 space-y-2 sm:space-y-0 ">
+        <img src="images/plus-circle.png" class="h-6 w-min-content" alt="plus-icon">
+        <button type="button" id="new-game-button" class="text-xl lg:text-2xl">NEW GAME</button>
       </div>
-      <div class="row-start-2 row-span-2 col-start-3 col-span-3 h-full flex flex-col justify-evenly items-center">
-        <div class="inline-flex space-x-7">
-          <h1 id="name-player1" class="text-5xl font-light">PLAYER 1</h1>
-          <span id="dot-player1" class="self-center w-4 h-4 aspect-square rounded-full bg-red-500"></span>
+      <div class="row-start-2 row-span-2 col-start-2 col-span-4 h-full flex flex-col justify-evenly items-center">
+        <div class="inline-flex space-x-1 md:space-x-7">
+          <h1 id="name-player1" class="text-2xl sm:text-3xl md:text-5xl font-light">PLAYER 1</h1>
+          <span id="dot-player1" class="self-center w-2 md:w-4 h-2 md:h-4 aspect-square rounded-full bg-red-500"></span>
         </div>
-        <div id="global-player1" class="global-box text-8xl text-red-500">0</div>
+        <div id="global-player1" class="global-box text-7xl md:text-9xl text-red-500">0</div>
       </div> 
-      <div class="round-box row-start-5 row-span-1 col-start-3 col-span-3 h-full flex flex-col justify-evenly items-center w-1/2 font-light bg-red-500">
-        <h3 class="">CURRENT</h3>
-        <div id="round-player1" class="text-4xl text-white">0</div>
+      <div class="round-box row-start-5 row-span-1 col-start-1 sm:col-start-2 col-span-4 h-full flex flex-col justify-evenly 
+      items-center w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-2/5 font-light bg-red-500">
+        <h3 class="xl:text-xl">CURRENT</h3>
+        <div id="round-player1" class="text-5xl text-white">0</div>
       </div>
-      <div id="dice" class="row-start-2 row-span-2 col-start-6 col-span-2 aspect-square max-w-max m-6 bg-white shadow-xl">
-        <img src="images/dice-dots/dice-1.png" class="hidden" alt="dice face with 1 dot">
-        <img src="images/dice-dots/dice-2.png" class="hidden" alt="dice face with 2 dot">
-        <img src="images/dice-dots/dice-3.png" class="hidden" alt="dice face with 3 dot">
-        <img src="images/dice-dots/dice-4.png" class="hidden" alt="dice face with 4 dot">
-        <img src="images/dice-dots/dice-5.png" class="hidden" alt="dice face with 5 dot">
-        <img src="images/dice-dots/dice-6.png" class="hidden" alt="dice face with 6 dot">
+      <div id="dice" class="row-start-3 row-span-2 col-start-6 col-span-2 sm:self-start 2xl:w-1/2 lg:m-6 bg-white shadow-xl">
+        <img src="images/dice-faces/dice-1.png" class="hidden" alt="dice face with 1 dot">
+        <img src="images/dice-faces/dice-2.png" class="hidden" alt="dice face with 2 dot">
+        <img src="images/dice-faces/dice-3.png" class="hidden" alt="dice face with 3 dot">
+        <img src="images/dice-faces/dice-4.png" class="hidden" alt="dice face with 4 dot">
+        <img src="images/dice-faces/dice-5.png" class="hidden" alt="dice face with 5 dot">
+        <img src="images/dice-faces/dice-6.png" class="hidden" alt="dice face with 6 dot">
       </div>
-      <div id="game-menu" class="row-start-5 row-span-1 col-start-6 col-span-2 h-full flex flex-col justify-between items-center text-2xl">
-        <div class="flex space-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.1em" fill="#ef4444" class="self-baseline" viewBox="0 0 16 16">
-            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-          </svg>
+      <div id="game-menu" class="row-start-5 row-span-1 col-start-5 col-span-4 h-full flex flex-col justify-between items-center text-xl lg:text-2xl">
+        <div class="flex flex-col sm:flex-row items-center space-x-1 sm:space-x-3 space-y-2 sm:space-y-0">
+          <img src="images/arrow-repeat.png" class="h-5 w-min-content" alt="repeat-icon">
           <button type="button" id="roll-dice-button">ROLL DICE</button>
         </div>
-        <div class="flex space-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#ef4444" class="" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
-            <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-          </svg>
+        <div class="flex flex-col sm:flex-row items-center sm:space-x-3 space-y-2 sm:space-y-0">
+          <img src="images/box-arrow-in-down.png" class="w-5 h-min-content" alt="save-icon">
           <button type="button" id="hold-button">HOLD</button></div>
       </div>
-      <div class= "row-start-2 row-span-2 col-start-8 col-span-3 h-full flex flex-col justify-evenly items-center">
-        <div class="inline-flex space-x-7">
-        <h1 id="name-player2" class="text-5xl">PLAYER 2</h1>
-        <span id="dot-player2" class="self-center w-4 h-4 aspect-square rounded-full bg-red-500 hidden"></span>
+      <div class= "row-start-2 row-span-2 col-start-8 col-span-4 h-full flex flex-col justify-evenly items-center">
+        <div class="inline-flex space-x-1 md:space-x-7">
+        <h1 id="name-player2" class="text-2xl sm:text-3xl md:text-5xl">PLAYER 2</h1>
+        <span id="dot-player2" class="self-center w-2 md:w-4 h-2 md:h-4 aspect-square rounded-full bg-red-500 hidden"></span>
         </div>  
-        <div id="global-player2"class="global-box text-8xl text-red-500">0</div>
+        <div id="global-player2"class="global-box text-7xl md:text-9xl text-red-500">0</div>
       </div>
-      <div class="round-box row-start-5 row-span-1 col-start-8 col-span-3 h-full flex flex-col justify-evenly items-center w-1/2 font-light bg-red-500">
-        <h3 class="">CURRENT</h3>
-        <div id="round-player2" class="text-4xl text-white">0</div>
+      <div class="round-box row-start-5 row-span-1 col-start-9 sm:col-start-8 col-span-4 h-full flex flex-col justify-evenly
+       items-center w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-2/5 font-light bg-red-500">
+        <h3 class="xl:text-xl">CURRENT</h3>
+        <div id="round-player2" class="text-5xl text-white">0</div>
       </div>
       <div id="box-player1" class="row-span-full col-start-1 col-span-6 h-full -z-50 justify-self-stretch active"></div>
       <div id="box-player2" class="row-span-full col-end-13 col-span-6 h-full -z-50 justify-self-stretch"></div>
